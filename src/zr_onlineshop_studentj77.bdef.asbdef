@@ -1,20 +1,4 @@
-managed implementation in class zbp_r_onlineshop_j77 unique;
-
-define behavior for ZR_ONLINESHOP_STUDENTJ77 alias Online_Shop
-persistent table zonlineshop_j77
-with additional save lock master
-authorization master ( instance )
-//etag master <field_name>
+unmanaged;
+define behavior for ZR_ONLINESHOP_STUDENTJ77
 {
-field ( numbering : managed, readonly ) order_Uuid; field ( readonly ) Creationdate, order_id; determination calculate_order_id on modify { create; } internal action create_pr parameter $self;
-//For demonstration of possible usage only
-internal action set_inforecord;
-internal action UPDATE_INFORECORD;
-//For demonstration of possible usage only internal action  update_inforecord; create;
-create; update; delete;
-
-mapping for zonlineshop_j77 {
-PackageId = pkgid; Order_Id = order_id;
-Creationdate = creationdate; Deliverydate = deliverydate; Order_Uuid = order_uuid;
-}
 }
